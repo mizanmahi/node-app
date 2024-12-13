@@ -17,7 +17,7 @@ app.use(globalErrorHandler);
 app.use((req: Request, res: Response, next: NextFunction) => {
    res.status(httpStatus.NOT_FOUND).json({
       success: false,
-      message: "Oops! It looks like this page doesn't exist at all hahahaha.",
+      message: "Oops! It looks like this page doesn't exist at all.",
       error: {
          path: req.originalUrl,
          error: `The requested URL was not found on this server.`,
