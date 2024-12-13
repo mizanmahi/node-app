@@ -69,11 +69,11 @@ jobs:
 
 
                ssh $EC2_USER@$EC2_HOST << 'EOF'
-                  export PATH=$PATH:/run/user/1000/fnm_multishells/112424_1734077954807/bin
-                  cd ~/app
-                  yarn install --frozen-lockfile
-                  pm2 delete nodejs-app || true
-                  pm2 start dist/server.js --name nodejs-app
+               export PATH=$PATH:/run/user/1000/fnm_multishells/112424_1734077954807/bin
+               cd ~/app
+               yarn install --frozen-lockfile
+               pm2 delete nodejs-app || true
+               pm2 start dist/server.js --name nodejs-app
                EOF
 
            #   # Install production dependencies on EC2
