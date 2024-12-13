@@ -52,10 +52,7 @@ jobs:
                 --exclude='.git' \
                 --exclude='node_modules' \
                 --exclude='.github' \
-                . package.json yarn.lock $EC2_USER@$EC2_HOST:~/app/
-
-              # Install production dependencies on EC2
-              ssh $EC2_USER@$EC2_HOST "cd ~/app && yarn install --frozen-lockfile"
+                . $EC2_USER@$EC2_HOST:~/app/
 
 
               # Stop existing PM2 process if it exists
